@@ -1,0 +1,8 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+  <app-main-card
+    *ngFor="let article of articles"
+    [title]="article.description"
+    [editUrl]="'/articles/edit/' + article.id"
+    (onDelete)="handleDelete(article.id)"
+  ></app-main-card>
+</div>
