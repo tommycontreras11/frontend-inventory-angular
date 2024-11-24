@@ -58,8 +58,11 @@
           id="cost"
           class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
           formControlName="cost"
-          type="number"
+          type="text"
         />
+        <div *ngIf="articleForm.get('cost')?.invalid && (articleForm.get('cost')?.dirty || articleForm.get('cost')?.touched)" class="text-red-500 text-xs italic">
+          <div *ngIf="articleForm.get('cost')?.errors?.['pattern']">Only numbers are allowed.</div>
+        </div>        
       </div>
 
     </div>

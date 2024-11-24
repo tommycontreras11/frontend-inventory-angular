@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { createArticle, IArticle } from '../../../api/article';
 
 @Component({
@@ -23,7 +23,7 @@ export class CreateArticleComponent {
       entryDate: [''],
       expiryDate: [''],
       quantity: [0],
-      cost: [0]
+      cost: [0, Validators.pattern(/^\d+$/)]
     });
   }
 
